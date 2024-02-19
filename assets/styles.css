@@ -6,6 +6,7 @@ body {
 	height: 100%;
 	font-family: "product-sans";
 	background-color: black;
+	min-width: 800px;
 }
 @media screen and (prefers-color-scheme: light) {
 	body {
@@ -25,36 +26,11 @@ body {
 	background-attachment: fixed;
 }
 #menu {
-	padding: 30px;
 	display: flex;
-}
-#lang-us {
-	padding-top: 10px;
-	padding-right: 80px;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-#lang-us-sel {
-	padding-top: 8px;
-	padding-right: 78px;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-#lang-pl {
-	padding-top: 10px;
-	padding-right: 10px;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-#lang-pl-sel {
-	padding-top: 8px;
-	padding-right: 8px;
-	position: absolute;
-	right: 0;
-	top: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-top: 5px;
 }
 #menu-buttons {
 	margin-left: auto;
@@ -63,22 +39,22 @@ body {
 	background-color: rgba(0,0,0,0);
 	border: none;
 	color: white;
-	padding: 15px 40px;
+	padding: 15px 10px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 45px;
+	font-size: 30px;
 	margin-top: 30px;
 	cursor: pointer;
 	outline: none;
 }
 .button-selected {
 	border: none;
-	padding: 15px 40px;
+	padding: 15px 10px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 45px;
+	font-size: 30px;
 	margin-top: 30px;
 	cursor: pointer;
 	background-color: rgba(0,0,0,0);
@@ -118,6 +94,61 @@ body {
 	text-align: justify;
 	color: white;
 }
+#download {
+	font-size: 15px;
+	color: white;
+	border-radius: 10px;
+	border-image: linear-gradient(rgba(255,0,0,1), rgba(255,0,127,1)) 1;
+	border-width: 4px;
+	border-style: solid;
+	margin: 0% 2% 0% 2%;
+	margin-top: 50px;
+}
+table#tabelka {
+	width:100%;
+	font-size: 17px;
+	border-collapse: collapse;
+}
+body { 
+	font-size: 140%; 
+}
+h2 {
+	text-align: center;
+	padding: 20px 0;
+}
+.p {
+	text-align: center;
+	padding-top: 140px;
+	font-size: 14px;
+}
+th {
+	text-align: left;
+}
+th#header {
+	padding: 20px;
+	font-size: 20px;
+}
+tr#pierwsze {
+	/* background-color: rgba(97, 97, 97, 0.5); */
+	background: -webkit-linear-gradient(rgba(255,0,0,0.5), rgba(255,0,127,0.5));
+}
+td#rom {
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+tr#clickable {
+	cursor: pointer;
+}
+tr#clickable:hover {
+	background-color: rgba(70,70,70,0.7);
+}
+tr.second {
+	background-color: rgba(97, 97, 97, 0.3);
+}
+tr.second:hover {
+	background-color: rgba(70,70,70,0.85);
+}
 #text-contact1 {
 	font-size: 30px;
 	color: white;
@@ -138,64 +169,9 @@ table.contact tbody td {
 	vertical-align: top;
 	color: white;
 }
-#gallery-text {
-	font-size: 30px;
-	color: white;
-}
 table.contact {
 	width: 100%;
 	text-align: center;
 	padding-left: 20px;
 	padding-right: 20px;
-}
-table.contact tbody td {
-	width: 14.2%;
-	padding: 20px;
-	vertical-align: top;
-	color: white;
-}
-table.gallery {
-	width: 100%;
-	text-align: center;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-table.gallery tbody td {
-	width: 25%;
-	padding: 25px;
-	vertical-align: top;
-	color: white;
-}
-table.gallery img {
-	height: auto;
-	width: 18%;
-}
-ul.a {
-	list-style-type: square;
-}
-#work-text {
-	font-size: 30px;
-	margin-left: 60px;
-	margin-right: 60px;
-	text-align: justify;
-	color: white;
-}
-#work-list {
-	font-size: 30px;
-	margin-left: 60px;
-	margin-right: 60px;
-	text-align: justify;
-	color: white;
-}
-#work-text a:link {
-	color: rgb(245,152,18);
-}
-#work-text a:visited {
-	color: rgb(193,119,9);
-}
-#work-list a:link {
-	color: rgb(255,255,255)
-}
-#work-list a:visited {
-	color: rgb(255,255,255)
 }
