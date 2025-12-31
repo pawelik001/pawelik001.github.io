@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Hitster - polski rap i hity</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+    <input type="number" id="videoNumber" placeholder="Wpisz numer">
+    <br><a href="#" id="ytLink" class="btn-yt">Otwórz</a>
+
+    <script>
+        const videoMap = {
+            "1": "dQw4w9WgXcQ", // Rick Astley - Never Gonna Give You Up
+            "2": "kJQP7kiw5Fk", // Luis Fonsi - Despacito
+            "3": "JGwWNGJdvx8", // Ed Sheeran - Shape of You
+            "4": "60ItHLz5WEA", // Alan Walker - Faded
+            "5": "9bZkp7q19f0", // PSY - GANGNAM STYLE
+            "6": "OPf0YbXqDm0", // Mark Ronson ft. Bruno Mars - Uptown Funk
+            "7": "09R8_2nJtjg", // Maroon 5 - Sugar
+            "8": "hT_nvWreIhg", // OneRepublic - Counting Stars
+            "9": "YQHsXMglC9A", // Adele - Hello
+            "10": "RgKAFK5djSk", // Wiz Khalifa ft. Charlie Puth - See You Again
+            "11": "EB-wxKVu788", // ReTo - Minotaur
+            "12": "fJ9rUzIMcZQ", // Queen – Bohemian Rhapsody (1975) [dodane od siebie – klasyk]
+            "13": "YVkUvmDQ3HY", // Eminem wo me
+            "14": "kXYiU_JCYtU", // Linkin Park – Numb (2003)
+            "15": "J7_bMdYfSws", // 2Pac – California Love (1995)
+            "16": "hTWKbfoikeg", // Nirvana – Smells Like Teen Spirit (1991) [dodane]
+            "17": "CD-E-LDc384", // Metallica – Enter Sandman (1991)
+            "18": "ktvTqknDobU", // Imagine Dragons – Radioactive (2012) [dodane]
+            "19": "Zi_XLOBDo_Y", // Michael Jackson – Billie Jean (1982)
+            "20": "CevxZvSJLk8", // Katy Perry – Roar (2013) [dodane]
+            "22": "uelHwf8o7_U", // Eminem – Love The Way You Lie (2010)
+            "23": "x7BtclKr5Jg", //paluch szmaan
+            "24": "LsoLEjrDogU", //taco hemingway 8
+            "25": "4pu-lKgm-dg", //paluch bez strachu
+            "26": "q4EM1jSg92k", //elektryczne gitary - dzieci wybiegly
+            "27": "NGr_496TmCg", //quebo half dead
+            "28": "BpS6xNrnMVc", //poparzeni kawą trzy do tańca
+            "29": "UxxajLWwzqY", //i love it
+            "30": "-5_5s5jCYUg",  //Icona Pop - Girlfriend
+            "31": "gCYcHz2k5x0",  //Martin Garrix - Animals
+            "32": "fiore9Z5iUg", //Lilly Wood & The Prick and Robin Schulz - Prayer In C
+            "33": "gqI-6xag8Mg", //Bullet For My Valentine - Scream Aim Fire
+            "34": "lODY-Ud02UQ", //Malik Montana - Baciata
+            "35": "s3L0_ez0Dg4",  //The Trail
+            "36": "iFdiR5jlvMg",  //Paktofonika-Tak,jak telewizor
+            "37": "fPO76Jlnz6c",  //Coolio - Gangsta's Paradise
+            "38": "dANKqxonWsk", //WELCOME TO MY MINE | MINECRAFT PARODI OF WELCOME TO MY HOUSE
+            "39": "fWNaR-rxAic", //Carly Rae Jepsen - Call Me Maybe
+            "40": "WrsFXgQk5UI", //Lil Uzi Vert - XO Tour Llif3
+            "41": "B9synWjqBn8", //Travis Scott - FE!N
+            "42": "Igq3d6XA75Y", //Cyberpunk 2077 — Chippin’ In
+            "43": "3dHpEfmegOA", //Gawryle - Harnaś Ice Tea
+            "44": "qnkuBUAwfe0", //Creed - One Last Breath
+            "45": "VB3GzmC_9rI",  //Liroy - Scyzoryk
+            "47": "hLQl3WQQoQ0", //Adele - Someone Like You
+            "48": "nccZphGjK_8", //Ukryty w Mieście Krzyk
+            "49": "8UVNT4wvIGY", //Szpaku - ALIGATOR
+            "51": "zf2VYAtqRe0",
+            "52": "d-WaLdUXY3k",
+            "53": "seCaY4Gzj5k",
+            "54": "m9WausKeEpg",
+            "55": "bUscKq-LzCk",
+            "56": "PPU_r3bz-V0",
+            "57": "KGFAVVAu5rg",
+            "58": "kDp-MYkjJ5A",
+            "59": "XL8xaUYqhNA",
+            "60": "_WCSTYW8D6s",
+            "61": "Hb8DXpfMqpQ",
+            "62": "uVQfwwXKo_c",
+            "63": "0SGii_L3y0w",
+            "64": "6CHs4x2uqcQ",
+            "65": "ZpUYjpKg9KY",
+            "66": "pE0DdJf-tSo",
+            "67": "-h-AfsmfJ9o",
+            "68": "kJxtuw-P1uU",
+            "69": "U_FirAt6UKg",
+            "70": "Jq2n3C3f9v8",
+            "71": "oZbo4l0BvwQ",
+            "72": "_OAc9-ycB6E",
+            "73": "EssaGhC29zo",
+            "74": "qvv7t8Y0iWk",
+            "75": "eHjlcoeGdrs",
+            "76": "1YTnfIaSitk",
+            "77": "_7rz2P6jUqc",
+            "78": "d6PvPgf-uu8",
+            "79": "YTziiho5QNU",
+            "80": "4PeRH2mPQg8",
+            "81": "hQnh_13QDf0",
+            "82": "CD-E-LDc384",
+            "83": "tAGnKpE4NCI",
+            "84": "Ckom3gf57Yw",
+            "85": "v2AC41dglnM",
+            "86": "l482T0yNkeo",
+            "87": "M-Hb63BRSow",
+            "88": "dZgUMESFAaw",
+            "89": "zCB9STBB01o",
+            "90": "ksuNUjA3BuU",
+            "92": "E1OjQ_3kh4A",
+            "93": "sAh8R_F_KOk",
+            "94": "H30R1BUpRF8",
+            "95": "Hj61PRYcBeA",
+            "96": "UmcFJIxjbIo",
+            "97": "zY1HBUiMaww",
+            "98": "vpP2wxyOo00",
+            "99": "LopWRJj0i4k",
+            "100": "wakbJpklQtI",
+            "101": "74awmTEOSOs",
+            "102": "cpmWu9n7LaM",
+            "103": "PpG3F6wRDZg",
+            "104": "VbfpW0pbvaU",
+            "105": "qOMCjDM8cro",
+            "106": "9rlNpWYQunY",
+            "107": "FrLequ6dUdM",
+            "108": "itRFjzQICJU",
+            "109": "bMoNV9oWs2E",
+            "110": "XvoAvPjADsE",
+            "111": "A2MSg3L0Zyg",
+            "112": "BuMBmK5uksg",
+            "113": "1LXSxMVNI6o",
+            "114": "uSD4vsh1zDA",
+            "115": "cSnkWzZ7ZAA",
+            "116": "CcCw1ggftuQ",
+            "117": "A3QITlATKjA",
+            "118": "GxBSyx85Kp8",
+            "119": "GtUVQei3nX4",
+            "120": "_CL6n0FJZpk",
+            "121": "QZXc39hT8t4",
+            "122": "CCF1_jI8Prk",
+            "123": "2up_Eq6r6Ko",
+            "124": "3O1_3zBUKM8",
+            "125": "ubWL8VAPoYw",
+            "126": "IYH7_GzP4Tg",
+            "127": "QjlFqgRbICY",
+        };
+
+        const linkElement = document.getElementById('ytLink');
+        const inputElement = document.getElementById('videoNumber');
+
+        // Funkcja aktualizująca link "w locie"
+        function updateLink() {
+            const num = inputElement.value;
+            const videoId = videoMap[num];
+
+            if (videoId) {
+                const isAndroid = /Android/i.test(navigator.userAgent);
+                const androidIntent = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;end`;
+                const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
+                
+                linkElement.href = isAndroid ? androidIntent : webUrl;
+            } else {
+                linkElement.href = "#";
+            }
+        }
+
+        // Aktualizuj link przy każdej zmianie w polu tekstowym
+        inputElement.addEventListener('input', updateLink);
+
+        // Dodatkowe zabezpieczenie: jeśli użytkownik kliknie, a ID jest błędne
+        linkElement.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === "#") {
+                e.preventDefault();
+                alert("Wpisz poprawny numer filmu!");
+            }
+        });
+    </script>
+</body>
+</html>
+</html>
